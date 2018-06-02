@@ -6,5 +6,17 @@ AnimatorOverrideController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: IceGuyAnim
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 9560a040bd145a44a912254433afe3f6, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 113e0ab4d36e06e42a24e14a18c3826b, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 69427f9a99e6e9845a02b21008d0a68e, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: d40dc4c51e90ae046aeb44990ea8ae68, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: a38d48f2e964f1843b230db25070321e, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ca00bd9491d5f4e4bb1425b5b3a3e2a3, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 4bf34e5ed22d7404b993f1a89be904a4, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 099e2487ecb1627479df3d037f5ed350, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 24444b2aacfcde14c8aa5ab1808e616a, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ef1d38fd7a30c8640aa1aee0506ddce4, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 7a257853d65e5394f914aee7baa8a848, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 90dccab23f170b94687dd99ee81b1852, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: f991a260853009947b60a5bf2449ae65, type: 3}

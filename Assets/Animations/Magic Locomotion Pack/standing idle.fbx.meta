@@ -103,7 +103,7 @@ ModelImporter:
     400094: Toes_R
     400096: UpperLeg_L
     400098: UpperLeg_R
-    7400000: mixamo.com
+    7400000: Idle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -134,7 +134,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Idle
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 56

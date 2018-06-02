@@ -90,6 +90,6 @@ public class PlayerMotor : MonoBehaviour
         }
         // Sets the angle between transform.forward and the velocity as the direction to strafe.
         controller.anim.SetFloat("locomotionDir", angle);
-        Debug.Log(angle);
+        Debug.Log(velocity.magnitude);
     }
 }
