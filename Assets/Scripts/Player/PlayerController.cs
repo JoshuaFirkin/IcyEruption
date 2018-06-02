@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Animator anim;
     [SerializeField] private Camera cam;
 
+    private ControllerMap ctrlMap;
     private PlayerMotor motor;
     private bool allowInput = true;
 
     void Start()
     {
+        ctrlMap = new ControllerMap(RuntimePlatform.XboxOne, 1);
+
         // Just a bunch o' null checks.
         if (cam == null)
         {
@@ -40,14 +43,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // Gets the input of the left stick and right stick and stores it in Vector2's.
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-        Vector2 lookInput = new Vector2(Input.GetAxis("LookHorizontal"), Input.GetAxis("LookVertical")).normalized;
+        Vector2 input = new Vector2(Input.GetAxis(ctrlMap.horAxis), Input.GetAxis(ctrlMap.vertAxis)).normalized;
+        Vector2 lookInput = new Vector2(Input.GetAxis(ctrlMap.horLook), Input.GetAxis(ctrlMap.vertLook)).normalized;
 
         // Adds movement to the velocity of the motor.
         motor.AddMovement(input, lookInput);
 
         // Allows evade to happen.
-        if (Input.GetButtonDown("Evade"))
+        if (Input.GetButtonDown(ctrlMap.evade))
         {
             motor.Evade();
         }

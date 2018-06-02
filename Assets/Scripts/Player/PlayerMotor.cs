@@ -61,8 +61,15 @@ public class PlayerMotor : MonoBehaviour
 
         // Sets the velocity magnitude as the speed variable for the character animator.
         controller.anim.SetFloat("velocity", velocity.magnitude);
+
+        float angle = Vector3.Angle(transform.forward, velocity);
+        Vector3 cross = Vector3.Cross(transform.forward, velocity);
+        if (cross.y < 0)
+        {
+            angle = 360 - angle;
+        }
         // Sets the angle between transform.forward and the velocity as the direction to strafe.
-        controller.anim.SetFloat("locomotionDir", Vector3.Angle(transform.forward, velocity));
-        Debug.Log(velocity.magnitude);
+        controller.anim.SetFloat("locomotionDir", angle);
+        Debug.Log(angle);
     }
 }
