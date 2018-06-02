@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class FireMotor : PlayerMotor
 {
-    [SerializeField] private AnimationClip evadeAnim;
     [SerializeField] private float dodgeDistance = 3.0f;
-
 
     public override void Evade()
     {
@@ -26,7 +24,13 @@ public class FireMotor : PlayerMotor
         AnimatorStateInfo stateInfo = controller.anim.GetCurrentAnimatorStateInfo(0);
         float secs = stateInfo.length;
 
-        yield return new WaitForSeconds(secs);
+        while (secs > 0)
+        {
+            secs -= Time.deltaTime;
+            velocity = transform.forward * (dodgeDistance / 10);
+
+            yield return null;
+        }
 
         controller.allowInput = true;
     }

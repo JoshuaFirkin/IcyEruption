@@ -759,7 +759,7 @@ MonoBehaviour:
   moveSpeed: 5
   rotationSpeed: 4
   evadeAnim: {fileID: 7400000, guid: d40dc4c51e90ae046aeb44990ea8ae68, type: 3}
-  dodgeDistance: 3
+  dodgeDistance: 2.2
 --- !u!114 &602249283
 MonoBehaviour:
   m_ObjectHideFlags: 0
