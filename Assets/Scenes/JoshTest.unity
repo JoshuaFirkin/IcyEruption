@@ -753,11 +753,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 602249277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d9de8c62f6ea4042994598196575d2b, type: 3}
+  m_Script: {fileID: 11500000, guid: bd51fc974c9a63249ba16764102e7d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotationSpeed: 5
+  rotationSpeed: 4
+  evadeAnim: {fileID: 7400000, guid: d40dc4c51e90ae046aeb44990ea8ae68, type: 3}
+  dodgeDistance: 3
 --- !u!114 &602249283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  allowInput: 1
   cam: {fileID: 0}
 --- !u!1 &652365387
 GameObject:

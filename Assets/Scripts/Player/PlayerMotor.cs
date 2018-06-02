@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1.0f;
-    [SerializeField] private float rotationSpeed = 1.0f;
+    public bool isEvading { get; protected set; }
 
-    private PlayerController controller;
-    private Rigidbody rb;
+    [SerializeField] protected float moveSpeed = 1.0f;
+    [SerializeField] protected float rotationSpeed = 1.0f;
 
-    private Vector3 velocity = Vector3.zero;
-    private Vector3 lookDirection = Vector3.zero;
+    protected PlayerController controller;
+    protected Rigidbody rb;
 
-	void Start ()
+    protected Vector3 velocity = Vector3.zero;
+    protected Vector3 lookDirection = Vector3.zero;
+
+	protected virtual void Start ()
     {
         // Just a bunch o' null checks.
         controller = GetComponent<PlayerController>();
@@ -40,10 +42,28 @@ public class PlayerMotor : MonoBehaviour
     public virtual void Evade()
     {
         // Will be overridden.
-        return;
+        Debug.Log("Evading.");
     }
 
-    private void FixedUpdate()
+    public virtual void ActionOne()
+    {
+        // Will be overridden.
+        Debug.Log("Performing Action One.");
+    }
+
+    public virtual void ActionTwo()
+    {
+        // Will be overridden.
+        Debug.Log("Performing Action Two.");
+    }
+
+    public virtual void ActionThree()
+    {
+        // Will be overridden.
+        Debug.Log("Performing Action Three.");
+    }
+
+    protected virtual void FixedUpdate()
     {
         // If the player is applying input to the right stick.
         if (lookDirection != Vector3.zero)

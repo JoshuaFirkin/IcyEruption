@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+
     [HideInInspector] public Animator anim;
+    [HideInInspector] public bool allowInput = true;
+
     [SerializeField] private Camera cam;
 
     private ControllerMap ctrlMap;
     private PlayerMotor motor;
-    private bool allowInput = true;
 
     void Start()
     {
@@ -53,6 +56,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(ctrlMap.evade))
         {
             motor.Evade();
+        }
+        else if (Input.GetButtonDown(ctrlMap.actionOne))
+        {
+
+        }
+        else if (Input.GetButtonDown(ctrlMap.actionTwo))
+        {
+
+        }
+        else if (Input.GetButtonDown(ctrlMap.actionThree))
+        {
+
         }
     }
 }
