@@ -77,6 +77,11 @@ public class PlayerMotor : MonoBehaviour
         {
             // Add the velocity to the position of the object.
             transform.position += velocity;
+
+            if (lookDirection == Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocity), rotationSpeed * Time.deltaTime);
+            }
         }
 
         // Sets the velocity magnitude as the speed variable for the character animator.

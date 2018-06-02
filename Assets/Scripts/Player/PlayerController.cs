@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-
     [HideInInspector] public Animator anim;
     [HideInInspector] public bool allowInput = true;
 
     [SerializeField] private Camera cam;
 
     private ControllerMap ctrlMap;
+    private int playerID;
     private PlayerMotor motor;
 
     void Start()
     {
-        ctrlMap = new ControllerMap(RuntimePlatform.XboxOne, 1);
+        //allowInput = false;
 
         // Just a bunch o' null checks.
         if (cam == null)
@@ -69,5 +68,15 @@ public class PlayerController : MonoBehaviour
         {
 
         }
+    }
+
+    public void SetPlayerInfo(RuntimePlatform _platform, int _id)
+    {
+        playerID = _id;
+        ctrlMap = new ControllerMap(_platform, _id);
+        allowInput = true;
+
+        Debug.Log("Player Assigned ID: " + playerID);
+        Debug.Log("Player Controller Assigned As: " + _platform);
     }
 }

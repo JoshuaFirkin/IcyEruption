@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IceMotor : PlayerMotor
 {
-    [SerializeField] private float dodgeDistance = 3.0f;
-
     public override void Evade()
     {
         base.Evade();
