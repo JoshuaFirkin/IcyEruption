@@ -9,12 +9,19 @@ public class FireMotor : PlayerMotor
     public override void Evade()
     {
         base.Evade();
+
+        if (isEvading)
+        {
+            return;
+        }
+
         StartCoroutine(CarryOutEvade());
     }
 
     private IEnumerator CarryOutEvade()
     {
         controller.allowInput = false;
+        isEvading = true;
 
         lookDirection = velocity;
         transform.rotation = Quaternion.LookRotation(lookDirection);
@@ -32,6 +39,8 @@ public class FireMotor : PlayerMotor
             yield return null;
         }
 
+
         controller.allowInput = true;
+        isEvading = false;
     }
 }

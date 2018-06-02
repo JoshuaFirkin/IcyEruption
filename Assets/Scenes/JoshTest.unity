@@ -312,6 +312,11 @@ Prefab:
       propertyPath: moveWithTransform
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114353165261004022, guid: ec393365baace674db1691e0a261ba3a,
+        type: 2}
+      propertyPath: dodgeDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec393365baace674db1691e0a261ba3a, type: 2}
   m_IsPrefabParent: 0
@@ -546,8 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec01be8966e7c34dad54a0af42f6961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overridePlayerCount: 0
-  playerCount: 0
+  overridePlayerCount: 1
+  playerCount: 2
   map: 27
 --- !u!4 &1563095860
 Transform:
