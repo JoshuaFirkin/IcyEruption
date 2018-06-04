@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class iKillable : MonoBehaviour {
-
+public interface iKillable
+{
+    void ApplyDamage(int damage = 1);
 }

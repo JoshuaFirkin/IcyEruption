@@ -7,26 +7,24 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Animator anim;
     [HideInInspector] public bool allowInput = true;
 
-    [SerializeField] private Camera cam;
-
     private ControllerMap ctrlMap;
     private int playerID;
     private PlayerMotor motor;
+    private PlayerAttack attack;
 
     void Start()
     {
-        //allowInput = false;
-
-        // Just a bunch o' null checks.
-        if (cam == null)
-        {
-            Debug.LogWarning("No camera attached to" + gameObject);
-        }
-
+        // Just a bunch of null checks.
         motor = GetComponent<PlayerMotor>();
         if (motor == null)
         {
             Debug.LogError("No PlayerMotor attached to " + gameObject.name);
+        }
+
+        attack = GetComponent<PlayerAttack>();
+        if (attack == null)
+        {
+            Debug.LogError("No PlayerAttack script attached to " + gameObject.name);
         }
 
         anim = GetComponent<Animator>();
@@ -52,21 +50,21 @@ public class PlayerController : MonoBehaviour
         motor.AddMovement(input, lookInput);
 
         // Allows evade to happen.
-        if (Input.GetButtonDown(ctrlMap.evade))
+        if (Input.GetAxis(ctrlMap.actionOne) > 0)
         {
             motor.Evade();
         }
-        else if (Input.GetButtonDown(ctrlMap.actionOne))
+        else if (Input.GetAxis(ctrlMap.actionOne) < 0)
         {
-
+            attack.ActionOne();
         }
         else if (Input.GetButtonDown(ctrlMap.actionTwo))
         {
-
+            attack.ActionTwo();
         }
         else if (Input.GetButtonDown(ctrlMap.actionThree))
         {
-
+            attack.ActionThree();
         }
     }
 
