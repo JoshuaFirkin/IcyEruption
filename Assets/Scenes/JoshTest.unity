@@ -255,7 +255,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1833159709785926, guid: b7e5f4fd13e75dc4f98880ee56020839, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4753877249730470, guid: b7e5f4fd13e75dc4f98880ee56020839, type: 2}
       propertyPath: m_RootOrder
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec01be8966e7c34dad54a0af42f6961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overridePlayerCount: 1
+  overridePlayerCount: 0
   playerCount: 2
   map: 27
 --- !u!4 &1563095860

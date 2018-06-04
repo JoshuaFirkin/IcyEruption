@@ -22,14 +22,19 @@ public class FireMotor : PlayerMotor
     {
         controller.allowInput = false;
         isEvading = true;
+        canChangeLook = false;
 
-        lookDirection = velocity;
-        transform.rotation = Quaternion.LookRotation(lookDirection);
+        if (velocity != Vector3.zero)
+        {
+            lookDirection = velocity;
+            transform.rotation = Quaternion.LookRotation(lookDirection);
+        }
 
         controller.anim.SetTrigger("evade");
 
         AnimatorStateInfo stateInfo = controller.anim.GetCurrentAnimatorStateInfo(0);
-        float secs = stateInfo.length;
+        // If the speed of the roll changes, this value needs to change.
+        float secs = stateInfo.length * 0.46f;
 
         while (secs > 0)
         {
@@ -42,5 +47,8 @@ public class FireMotor : PlayerMotor
 
         controller.allowInput = true;
         isEvading = false;
+
+        yield return new WaitForSeconds(0.5f);
+        canChangeLook = true;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     public bool isEvading { get; protected set; }
+    public bool canChangeLook { get; protected set; }
 
     [SerializeField] protected float moveSpeed = 1.0f;
     [SerializeField] protected float rotationSpeed = 1.0f;
@@ -26,6 +27,7 @@ public class PlayerMotor : MonoBehaviour
 
         // Starts the player looking forward.
         lookDirection = transform.forward;
+        canChangeLook = true;
 	}
 
 
@@ -63,10 +65,18 @@ public class PlayerMotor : MonoBehaviour
         Debug.Log("Performing Action Three.");
     }
 
+
     protected virtual void FixedUpdate()
     {
+        if (isEvading)
+        {
+            transform.position += velocity;
+            Debug.Log(velocity.magnitude);
+            return;
+        }
+
         // If the player is applying input to the right stick.
-        if (lookDirection != Vector3.zero)
+        if (lookDirection != Vector3.zero && canChangeLook)
         {
             // face the direction that was passed in through player controller.
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDirection), rotationSpeed * Time.deltaTime);
