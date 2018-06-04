@@ -8,9 +8,9 @@ AnimatorOverrideController:
   m_Name: FireGuyAnim
   m_Controller: {fileID: 9100000, guid: 9560a040bd145a44a912254433afe3f6, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 69427f9a99e6e9845a02b21008d0a68e, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 113e0ab4d36e06e42a24e14a18c3826b, type: 3}
-  - m_OriginalClip: {fileID: 7400000, guid: 90e98f6598cd8234d8f22ed304912b72, type: 3}
-    m_OverrideClip: {fileID: 7400000, guid: 71214c7bc656b6541ba1a58b51288454, type: 3}
   - m_OriginalClip: {fileID: 7400000, guid: d40dc4c51e90ae046aeb44990ea8ae68, type: 3}
     m_OverrideClip: {fileID: 7400000, guid: d40dc4c51e90ae046aeb44990ea8ae68, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 3b0a44b45f1d6224daee0b572b4ae4f3, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 3b0a44b45f1d6224daee0b572b4ae4f3, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 5ea151c3b89cb8042ab2efba859b7496, type: 3}
+    m_OverrideClip: {fileID: 7400000, guid: 3b0a44b45f1d6224daee0b572b4ae4f3, type: 3}
