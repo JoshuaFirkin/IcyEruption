@@ -37,11 +37,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // This is so that the input can be disabled if we need it to be.
-        if (!allowInput)
+        if (!allowInput || ctrlMap == null)
         {
             return;
         }
 
+        CheckInput();
+    }
+
+    void CheckInput()
+    {
         // Gets the input of the left stick and right stick and stores it in Vector2's.
         Vector2 input = new Vector2(Input.GetAxis(ctrlMap.horAxis), Input.GetAxis(ctrlMap.vertAxis)).normalized;
         Vector2 lookInput = new Vector2(Input.GetAxis(ctrlMap.horLook), Input.GetAxis(ctrlMap.vertLook)).normalized;
@@ -66,6 +71,11 @@ public class PlayerController : MonoBehaviour
         {
             attack.ActionThree();
         }
+    }
+
+    void AIControl()
+    {
+        return;
     }
 
     public void SetPlayerInfo(RuntimePlatform _platform, int _id)

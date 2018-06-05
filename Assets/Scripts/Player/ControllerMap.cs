@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControllerMap
 {
+    public bool mapAssigned = false;
+
     public string horAxis;
     public string vertAxis;
     public string horLook;
@@ -20,6 +22,8 @@ public class ControllerMap
 
     void ChangeControllerMap(RuntimePlatform platform, int playerNumber)
     {
+        mapAssigned = true;
+
         switch (platform)
         {
             case RuntimePlatform.PS4:

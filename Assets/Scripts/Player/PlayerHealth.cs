@@ -27,6 +27,12 @@ public class PlayerHealth : MonoBehaviour, iKillable
 
     void iKillable.ApplyDamage(int damage)
     {
+        if (isDead)
+        {
+            return;
+        }
+
+        Debug.Log("Taking Damage: " + damage);
         hitPointsRemaining -= damage;
 
         if (hitPointsRemaining <= 0)
